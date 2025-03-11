@@ -1,6 +1,6 @@
 workflows:
   sample-workflow:
-    name: Sample Build Workflow
+    name: Simple React Native Build
     max_build_duration: 120
     instance_type: mac_mini_m2
 
@@ -14,8 +14,10 @@ workflows:
 
       - name: Build iOS App
         script: |
-          npx expo install expo-constants
-          eas build --platform ios --non-interactive --profile preview
+          cd ios
+          pod install
+          xcodebuild -workspace YourApp.xcworkspace -scheme YourApp -configuration Release -sdk iphoneos -archivePath build/YourApp.xcarchive archive
+          xcodebuild -exportArchive -archivePath build/YourApp.xcarchive -exportOptionsPlist ios/ExportOptions.plist -exportPath build
 
     artifacts:
-      - dist/*.ipa
+      - build/*.ipa

@@ -1,0 +1,9 @@
+{
+  "name": "ViroStarterKit",
+  "displayName": "ViroStarterKit",
+  "extra": {
+    "eas": {
+      "projectId": "5712ed3d-d37a-4af2-8bea-05fea713ee6d"
+    }
+  }
+}

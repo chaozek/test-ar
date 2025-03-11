@@ -16,8 +16,8 @@ workflows:
         script: |
           cd ios
           pod install
-          xcodebuild -workspace YourApp.xcworkspace -scheme YourApp -configuration Release -sdk iphoneos -archivePath build/YourApp.xcarchive archive
-          xcodebuild -exportArchive -archivePath build/YourApp.xcarchive -exportOptionsPlist ios/ExportOptions.plist -exportPath build
+          xcodebuild -workspace ViroStarterKit.xcworkspace -scheme ViroStarterKit -configuration Release -sdk iphoneos -archivePath build/ViroStarterKit.xcarchive archive
+          xcodebuild -exportArchive -archivePath build/ViroStarterKit.xcarchive -exportOptionsPlist ios/ExportOptions.plist -exportPath build
 
     artifacts:
       - build/*.ipa
